@@ -10,6 +10,10 @@ const App = () => {
         if(localStorage.getItem('nombreApi')){
             setNombrePersonaje(JSON.parse(localStorage.getItem('nombreApi')))
         }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("nombreApi", JSON.stringify(nombrePersonaje));
     }, [nombrePersonaje])
 
     return (
